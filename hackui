@@ -1,0 +1,32 @@
+if(typeof hackui == "undefined"){
+  hackui = {
+    "increase-visibility":false,
+  }
+}
+
+#build ui
+ui = document.createElement("div")
+document.body.append(ui)
+ui.style.position = "absolute"
+ui.style.left = 0
+ui.style.top = 0
+
+#add buttons
+Object.keys(hackui).forEach(k =>{
+fetch("https://raw.githubusercontent.com/starbhacker/sb-stuff/main/"+k).then(r=>{
+r.text().then((script)=>{
+eval(script)
+})
+})
+b = document.createElement("button")
+b.innerHTML = k;
+ui.append(b)
+b.onclick = ()=>{
+hackui[k] = !hackui[k]
+if(hackui[k]){
+b.style.boxShadow="inset 3px 2px 22px 1px rgba(0, 0, 0, 0.8)"
+}else{
+b.style.boxShadow="initial"
+}
+}
+})
