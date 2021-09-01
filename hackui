@@ -49,3 +49,9 @@ fetch("https://raw.githubusercontent.com/starbhacker/sb-stuff/main/join-teams.js
             runScript(script)
         })
 })
+
+fetch("https://raw.githubusercontent.com/starbhacker/sb-stuff/main/autoupgradefly.js").then(r => {
+        r.text().then((script) => {
+            runScript(script)
+        })
+})
