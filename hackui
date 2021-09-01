@@ -13,10 +13,10 @@ ui.style.top = 0
 
 
 runScript = (script) =>{
-s = `(function(hackui,ui,module){
+s = `(function(hackui,ui,module,document){
 'use-strict';
 ${script}
-})(hackui,ui,module)`
+})(hackui,ui,module,document)`
 eval(s)
 }
 
