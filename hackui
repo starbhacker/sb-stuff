@@ -11,6 +11,16 @@ ui.style.position = "absolute"
 ui.style.left = 0
 ui.style.top = 0
 
+
+runScript = (script) =>{
+s = `(function(hackui,ui,module){
+'use-strict';
+${script}
+})(hackui,ui,module)`
+eval(s)
+}
+
+
 //add buttons
 Object.keys(hackui).forEach((_k) => {
     b = document.createElement("button")
@@ -31,4 +41,11 @@ Object.keys(hackui).forEach((_k) => {
         })
     })
   },0)
+})
+
+
+fetch("https://raw.githubusercontent.com/starbhacker/sb-stuff/main/join-teams.js").then(r => {
+        r.text().then((script) => {
+            runScript(script)
+        })
 })
