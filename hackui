@@ -59,3 +59,8 @@ fetch("https://raw.githubusercontent.com/starbhacker/sb-stuff/main/autoupgradefl
             runScript(script)
         })
 })
+fetch("https://raw.githubusercontent.com/starbhacker/sb-stuff/main/weapons.js").then(r => {
+        r.text().then((script) => {
+            runScript(script)
+        })
+})
